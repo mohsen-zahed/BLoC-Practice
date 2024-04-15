@@ -21,12 +21,13 @@ class _AddTodoScreenState extends State<AddTodoScreen> {
           ),
           ElevatedButton(
             onPressed: () {
+              //* adds functionality to button in order to invoke the addTodo() method in TodoCubit class
               context
                   .read<TodoCubit>()
                   .addTodo(textEditingController.text.trim());
               Navigator.of(context).pop();
             },
-            child: Text('Add'),
+            child: const Text('Add'),
           ),
         ],
       ),

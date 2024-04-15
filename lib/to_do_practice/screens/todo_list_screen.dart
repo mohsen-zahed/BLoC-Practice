@@ -4,14 +4,16 @@ import 'package:state_management_practice/to_do_practice/cubit/todo_cubit.dart';
 import 'package:state_management_practice/to_do_practice/model/todo_model.dart';
 import 'package:state_management_practice/to_do_practice/screens/add_todo_screen.dart';
 
-class TodoScreen extends StatelessWidget {
-  const TodoScreen({super.key});
+class TodoListScreen extends StatelessWidget {
+  const TodoListScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      //* we wrap a widget with BlocBuilder in which we expect updates from that widget
       body: BlocBuilder<TodoCubit, List<Todo>>(
         builder: (context, todos) {
+          //* todos is a list of Todo models here: todos = [Todo, Todo, Todo...]
           return todos.isNotEmpty
               ? ListView.builder(
                   itemCount: todos.length,
