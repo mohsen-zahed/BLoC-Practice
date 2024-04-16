@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:state_management_practice/login_form_practice/screens/login_screen.dart';
 import 'package:state_management_practice/to_do_practice/screens/todo_list_screen.dart';
+import 'package:state_management_practice/weather_practice/screens/weather_screen.dart';
 
 class MyHomePage extends StatelessWidget {
   const MyHomePage({super.key, required this.title});
@@ -22,7 +23,8 @@ class MyHomePage extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const TodoListScreen()),
+                  MaterialPageRoute(
+                      builder: (context) => const TodoListScreen()),
                 );
               },
               child: const Text('Todo Practice'),
@@ -35,6 +37,16 @@ class MyHomePage extends StatelessWidget {
                 );
               },
               child: const Text('Login Practice'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const WeatherScreen()),
+                );
+              },
+              child: const Text('Weather Practice'),
             ),
           ],
         ),
